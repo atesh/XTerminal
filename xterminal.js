@@ -303,13 +303,8 @@ var xt = new Object({
 		var m_char = text.substring(charnum, charnum + 1);
 		var to_print = m_char;
 		
-		if (m_char === "\\") {
-			// escape character.
-			var next_char = text.substring(charnum + 1, charnum + 2);
-			if (next_char === "n") { to_print = "<br>"; }
-			if (next_char === "t") { to_print = "&nbsp;&nbsp;&nbsp;"; }
-			charnum++;
-		}
+		if (m_char === "\n") { to_print = "<br>"; }
+		if (m_char === "\t") { to_print = "&nbsp;&nbsp;&nbsp;"; }
 		
 		$("#console").append(to_print);
 		$("#console").scrollTop(xt.length * 120);
